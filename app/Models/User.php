@@ -15,10 +15,17 @@ class User extends Authenticatable
      * 
      * @var string
      */
-    protected $table = 'AF_users';
+    protected $table = 'users';
 
     /**
-     * The attributes that are mass assignable.
+     * 主键
+     * 
+     * @var string
+     */
+    protected $primaryKey = "user_id";
+
+    /**
+     * 用户可填写的字段。
      *
      * @var array
      */
@@ -27,7 +34,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * 在数组或者JSON中应该隐藏的字段。
      *
      * @var array
      */
@@ -36,7 +43,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * 需要转变为原生类型的字段。
      *
      * @var array
      */
