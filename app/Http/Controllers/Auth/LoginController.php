@@ -37,4 +37,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * 修改默认的认证字段email为account
+     * 
+     * @return string
+     */
+    public function username() {
+        return 'account';
+    }
 }
