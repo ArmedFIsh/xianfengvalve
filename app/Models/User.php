@@ -18,13 +18,6 @@ class User extends Authenticatable
     protected $table = 'users';
 
     /**
-     * 主键
-     * 
-     * @var string
-     */
-    protected $primaryKey = "user_id";
-
-    /**
      * 用户可填写的字段。
      *
      * @var array
@@ -50,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'user_account_verified_at' => 'datetime',
     ];
+
+    /**
+     * 获取用户的地址。
+     * 
+     * @return 
+     */
+    public function addresses() {
+        return $this->hasMany('App\Models\Address');
+    }
+
 }
