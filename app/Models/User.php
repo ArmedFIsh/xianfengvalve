@@ -11,12 +11,19 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * 使用的表
+     * 
+     * @var string
+     */
+    protected $table = 'AF_users';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'account', 'password',
+        'user_name', 'user_account', 'user_password',
     ];
 
     /**
@@ -25,7 +32,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'user_password', 'remember_token',
     ];
 
     /**
@@ -34,6 +41,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'user_account_verified_at' => 'datetime',
     ];
 }
