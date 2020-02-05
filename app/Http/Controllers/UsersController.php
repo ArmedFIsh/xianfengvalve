@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -50,12 +51,12 @@ class UsersController extends Controller
     /**
      * 显示用户个人信息的页面
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  App\Models\User  $user
+     * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('users.show', compact('user'));
     }
 
     /**
