@@ -7,24 +7,32 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', '上海先锋阀门') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://xianfeng.yufante.top/js/jquery-3.3.1.min.js"></script>
+    <script src="http://xianfeng.yufante.top/js/bootstrap.min.js"></script>
+    <script src="http://xianfeng.yufante.top/js/popper.min.js"></script>
+    <script src="http://xianfeng.yufante.top/fileinput/js/fileinput.js"></script>
+    <script src="http://xianfeng.yufante.top/fileinput/js/locales/zh.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="http://xianfeng.yufante.top/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://xianfeng.yufante.top/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="http://xianfeng.yufante.top/fileinput/css/fileinput.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', '上海先锋阀门') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
