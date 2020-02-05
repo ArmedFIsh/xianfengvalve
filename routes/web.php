@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Route::resource(['users' => 'UsersController']);
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/docs', 'UsersController@docs');
+Route::get('/docs', 'UsersController@docs')->name('docs');
