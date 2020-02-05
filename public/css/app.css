@@ -31,8 +31,9 @@ footer a:hover {
 }
 
 footer img.brand-icon {
-  width: 17px;
-  height: 17px;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
 }
 
 /* Fonts */

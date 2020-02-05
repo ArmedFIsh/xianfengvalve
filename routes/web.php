@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource(['users' => 'UsersController']);
+Route::resource('users', 'UsersController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/docs', 'UsersController@docs')->name('docs');
+Route::get('/register', 'UsersController@create')->name('register');
+Route::get('/login', 'UsersController@loginCreate')->name('login');
