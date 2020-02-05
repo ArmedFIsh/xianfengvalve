@@ -19,7 +19,7 @@ class Address extends Model
      * 
      * @var string
      */
-    protected $primaryKey = "address_id";
+    protected $primaryKey = "id";
 
     /**
      * 用户可填写的字段。

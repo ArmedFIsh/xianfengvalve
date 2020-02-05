@@ -47,7 +47,7 @@ class User extends Authenticatable
     /**
      * 获取用户的地址。
      * 
-     * @return 
+     * @return Illuminate\Database\Eloquent\Collection
      */
     public function addresses() {
         return $this->hasMany('App\Models\Address');
