@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 显示所有用户列表的页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -17,7 +17,7 @@ class UsersController extends Controller
     }
 
     /**
-     * 显示创建新用户的界面。
+     * 显示创建新用户的界面
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -27,7 +27,7 @@ class UsersController extends Controller
     }
 
     /**
-     * 显示登录的界面。
+     * 显示登录的界面
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -37,7 +37,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 创建用户
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -48,7 +48,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * 显示用户个人信息的页面
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -59,7 +59,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 显示编辑用户个人资料的页面
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -70,7 +70,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * 更新用户
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -82,7 +82,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 删除用户
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
