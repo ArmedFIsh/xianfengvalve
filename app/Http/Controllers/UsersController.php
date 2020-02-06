@@ -18,7 +18,7 @@ class UsersController extends Controller
     }
 
     /**
-     * 显示创建新用户的界面
+     * 显示创建新用户的界面2
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
