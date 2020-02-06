@@ -45,9 +45,17 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $user = User::where('user_account', '=', $input['user_account']);
-        $user->user_name = $input['user_name'];
+        $this->validate($request, [
+            'user_name' => 'required|max:50',
+            'user_account' => 'required|unique:users|max:25',
+            'user_password' => 'required|confirmed|min:8|max:25'
+        ]);
+        $user = User::create([
+            'user_name' => $request->user_name,
+            'user_account' => $request->user_account,
+            'user_password' => $request->user_password,
+        ]);
+        return redirect()->route('users.show', [$user]);
     }
 
     /**
