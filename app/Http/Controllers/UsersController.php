@@ -45,7 +45,9 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $user = User::where('user_account', '=', $input['user_account']);
+        $user->user_name = $input['user_name'];
     }
 
     /**
