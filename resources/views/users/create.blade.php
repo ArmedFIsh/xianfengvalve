@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '注册')
+@section('title', __('Register'))
 
 @section('content')
 <div class="offset-md-2 col-md-8">
@@ -8,6 +8,7 @@
         <h5>注册</h5>
       </div>
       <div class="card-body">
+        @include('shared._errors')
         <form method="POST" action="{{ route('users.store') }}">
             @csrf
             <div class="form-group">
@@ -21,8 +22,8 @@
             </div>
   
             <div class="form-group">
-              <label for="user_password">密码：</label>
-              <input type="password" name="user_password" class="form-control" value="{{ old('user_password') }}">
+              <label for="password">密码：</label>
+              <input type="password" name="password" class="form-control" value="{{ old('password') }}">
             </div>
   
             <div class="form-group">

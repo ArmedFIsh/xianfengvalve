@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('user_name', 50);
             $table->string('user_account', 25)->unique();
-            $table->string('user_password', 25);
+            $table->string('password', 25);
             $table->string('avatar_loc');
             $table->rememberToken();
             $table->timestamps();
