@@ -26,7 +26,7 @@ class StoreUser extends FormRequest
     {
         return [
             'user_name' => 'required|max:50',
-            'user_account' => 'required|unique:users|max:25',
+            'user_account' => 'required|unique:users|max:25|min:5',
             'user_account' => new Account,
             'password' => 'required|confirmed|min:8|max:25',
         ];

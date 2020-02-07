@@ -22,6 +22,7 @@
     <div id="app">
         @include('layouts._header')
         <main class="container">
+            @include('shared._messages')
             @yield('content')
             @include('layouts._footer')
         </main>

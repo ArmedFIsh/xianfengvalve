@@ -48,10 +48,11 @@ class UsersController extends Controller
     {
         $validated = $request->validated();
         $user = User::create([
-            'user_name' => $validated->user_name,
-            'user_account' => $validated->user_account,
-            'password' => $validated->password,
+            'user_name' => $validated['user_name'],
+            'user_account' => $validated['user_account'],
+            'password' => bcrypt($validated['password']),
         ]);
+        session()->flash('success', '注册成功');
         return redirect()->route('users.show', [$user]);
     }
 
