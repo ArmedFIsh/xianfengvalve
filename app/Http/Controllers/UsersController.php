@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUser;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Rules\Account;
 
 class UsersController extends Controller
 {
@@ -44,18 +44,13 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUser $request)
     {
-        $this->validate($request, [
-            'user_name' => 'required|max:50',
-            'user_account' => 'required|unique:users|max:25',
-            'user_account' => new Account,
-            'password' => 'required|confirmed|min:8|max:25',
-        ]);
+        $validated = $request->validated();
         $user = User::create([
-            'user_name' => $request->user_name,
-            'user_account' => $request->user_account,
-            'password' => $request->password,
+            'user_name' => $validated->user_name,
+            'user_account' => $validated->user_account,
+            'password' => $validated->password,
         ]);
         return redirect()->route('users.show', [$user]);
     }
