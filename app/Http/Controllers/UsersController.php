@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUser;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -43,11 +44,16 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUser $request)
     {
-        $input = $request->all();
-        $user = User::where('user_account', '=', $input['user_account']);
-        $user->user_name = $input['user_name'];
+        $validated = $request->validated();
+        $user = User::create([
+            'user_name' => $validated['user_name'],
+            'user_account' => $validated['user_account'],
+            'password' => bcrypt($validated['password']),
+        ]);
+        session()->flash('success', '注册成功');
+        return redirect()->route('users.show', [$user]);
     }
 
     /**
