@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Rules\Account;
 
 class UsersController extends Controller
 {
@@ -48,7 +49,8 @@ class UsersController extends Controller
         $this->validate($request, [
             'user_name' => 'required|max:50',
             'user_account' => 'required|unique:users|max:25',
-            'password' => 'required|confirmed|min:8|max:25'
+            'user_account' => new Account,
+            'password' => 'required|confirmed|min:8|max:25',
         ]);
         $user = User::create([
             'user_name' => $request->user_name,
