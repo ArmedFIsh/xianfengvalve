@@ -19,4 +19,7 @@ Route::resource('users', 'UsersController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/docs', 'UsersController@docs')->name('docs');
 Route::get('/register', 'UsersController@create')->name('register');
-Route::get('/login', 'UsersController@loginCreate')->name('login');
+//Route::get('/login', 'UsersController@loginCreate')->name('login');
+Route::get('/login', 'SessionsController@create')->name('login');
+Route::post('/login', 'SessionsController@create')->name('login');
+Route::delete('/logout', 'SessionsController@create')->name('logout');
