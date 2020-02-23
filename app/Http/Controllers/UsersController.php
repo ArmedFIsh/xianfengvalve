@@ -41,7 +41,7 @@ class UsersController extends Controller
     /**
      * 创建用户
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreUser  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreUser $request)

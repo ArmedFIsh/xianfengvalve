@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUser;
+use Auth;
 
 class SessionsController extends Controller
 {
@@ -34,7 +36,17 @@ class SessionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $this->validate($request, [
+            'user_account' => 'required|max:25|min:5',
+            'password' => 'required'
+        ]);
+        if (Auth::attempt($validated)) {
+            session()->flash('success', '登录成功');
+            return redirect()->route('users.show', [Auth::user()]);
+        } else {
+            session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
+            return redirect()->back()->withInput();
+        }
     }
 
     /**

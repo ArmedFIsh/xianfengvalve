@@ -21,5 +21,5 @@ Route::get('/docs', 'UsersController@docs')->name('docs');
 Route::get('/register', 'UsersController@create')->name('register');
 //Route::get('/login', 'UsersController@loginCreate')->name('login');
 Route::get('/login', 'SessionsController@create')->name('login');
-Route::post('/login', 'SessionsController@create')->name('login');
-Route::delete('/logout', 'SessionsController@create')->name('logout');
+Route::post('/login', 'SessionsController@store')->name('login');
+Route::delete('/logout', 'SessionsController@destory')->name('logout');
