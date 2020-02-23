@@ -52,6 +52,7 @@ class UsersController extends Controller
             'user_account' => $validated['user_account'],
             'password' => bcrypt($validated['password']),
         ]);
+        Auth::login($user);
         session()->flash('success', '注册成功');
         return redirect()->route('users.show', [$user]);
     }
